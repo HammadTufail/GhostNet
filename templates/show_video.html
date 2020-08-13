@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>GhostNet</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="/static/upload.js"></script>
+    <!-- Bootstrap -->
+    <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+      
+  </head>
+  <body>
+      <!--<div class="header">&nbsp;</div>-->
+      
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+              <img class="mb-4" src="{{ url_for('static', filename='images/logo-signin.png') }}" alt="GhostNet" title="GhostNet" />
+              GhostNet</a>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="{{ url_for('index') }}">Home</a></li>
+              
+			  <li><a href="{{ url_for('camerasurvillance') }}">Camera</a></li>
+			  <li><a href="{{ url_for('addvideo') }}">Video</a></li>
+            </ul>
+              
+              <ul class="nav nav-pills pull-right">
+              <li role="presentation"><a href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+              
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav> <!-- Nav Ends Here -->
+      
+      <div class="container" style="margin-top:55px;">
+        <h1>Scanned Video</h1>
+          <div class="row">
+              <div class="col-md-5">
+                  <video
+						src="{{ url_for('video' , filename=video1)}}"
+						width="800"
+						height="400"
+						controls
+					                   >
+				  </video>
+              </div>
+              
+          </div>  <!-- row --> 
+          
+          <p><a href="{{ url_for('addvideo') }}">Back to add video</a></p>
+          
+
+              
+                
+              
+              
+          </div> <!-- row -->
+         
+    
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-2.1.1.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+  </body>
+</html>

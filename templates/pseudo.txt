@@ -1,0 +1,41 @@
+set predicted->empty_list
+set actual->empty_list
+func extract_images(arg1,arg2='/home/jupyter/HammadData/Frames/Test/')
+{
+    remove files from tmp folder
+    factor->horizontal or vertical scaling factor
+    width->factor[0]
+    height->factor[1]
+    if width is greater than height
+		resize_str->'-1:256'
+	else
+		resize_str->'256:-1'
+    syscall(extract the frames and resize them)
+    nframes->total_frames
+end
+}
+func main(){
+    opt -> parse_opts()
+    inp->input("Enter Absolute Path to video:")
+    lb->str(input("Enter Label for This video:"))
+    clip1->extract_images(inp)
+    model, parameters ->generate_model(opt)     
+	checkpoint->load(model)
+    accuracies->AverageMeterCalc
+    pred5_accuracies->AverageMeterCalc
+    clip_accuracies->AverageMeterCalc
+    
+
+    for clip in clip1
+        clip->squeeze(clip)
+        inputs->Tensor(int(clip->shape[1]/opt->sample_duration), 3, opt->sample_duration, opt->sample_size, opt->sample_size)
+        for k in input tensors:
+                inputs[k,:,:,:,:]->clip[:,k*opt.sample_duration:(k+1)*opt.sample_duration,:,:]   
+        inputs_var->Variable(inputs)
+        outputs_var->	model(inputs_var)
+        pred5 ->list(mean(outputs_var).topk(5))
+    
+     	for ii in outputs_var:
+            result = get_top5
+            print('Predicted:',result[0][0])
+            print('Actual:',label[0].item())

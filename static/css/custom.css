@@ -1,0 +1,129 @@
+/* File Uploader */
+body {
+     background:#ececec;
+}
+
+.files input {
+    /*outline: 2px dashed #92b0b3;*/
+    outline-offset: -10px;
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    padding: 120px 0px 85px 35%;
+    text-align: center !important;
+    margin: 0;
+    width: 100% !important;
+}
+.files input:focus{     outline: 2px dashed #92b0b3;  outline-offset: -10px;
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear; border:1px solid #92b0b3;
+ }
+.files{ position:relative}
+.files:after {  pointer-events: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100px;
+    right: 0;
+    height: 66px;
+    content: "";
+    background-image: url(../images/file-uploader.png);
+    display: block;
+    margin: 0 auto;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.color input{ background-color:#f1f1f1;}
+.files:before {
+    position: absolute;
+    bottom: 2px;
+    left: 0;  pointer-events: none;
+    width: 100%;
+    right: 0;
+    height: 57px;
+    content: " or drag your file here. ";
+    display: block;
+    margin: 0 auto;
+    color: #6c6c6c;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+/* Uploader ends here */
+
+.header {
+    height: 50px;
+    background: #7fbece;
+    margin-bottom: 2.5em;
+}
+h1 {
+    font-family: 'Roboto Slab', serif;
+    padding-bottom: .50em;
+    border-bottom: 1px solid #ccc;
+}
+
+.mar-bottom {
+    margin-bottom: 1.5em;
+}
+.cur {
+    cursor: pointer;
+}
+.table-responsive a {
+    color: #2574a9;
+}
+label {
+    color: #fff;
+    font-weight:normal;
+}
+
+.text-muted {
+    color:#3a3a3a;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px; /* Set the fixed height of the footer here */
+    line-height: 60px; /* Vertically center the text there */
+    background-color: #cdcccc;
+    text-align:center;
+    border-top:1px solid #a6a6a6;
+}
+
+.modal-header .close {
+    margin-top: -45px;
+}
+
+.scroll {
+    max-height: 400px;
+    overflow: auto;
+    margin-bottom: 20px;
+}
+
+.mCSB_inside > .mCSB_container {
+    margin-right: 20px;
+}
+
+.ml-15 {
+    margin-left: 15px;
+}
+
+.navbar-brand {
+    color: #fff;
+}
+
+.navbar-brand > img{
+    width: 25px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.files label {
+    color: #333;
+}
+
+@media (max-width: 767px) {
+    body {
+        padding-bottom: 70px;
+    }
+}
